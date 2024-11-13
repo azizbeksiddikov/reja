@@ -2,6 +2,16 @@ console.log("Web Serverni boshlash");
 const express = require("express");
 const app = express();
 const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    user = JSON.parse(data);
+  }
+});
 
 // 1: Kirish Code (Middleware and Static File Serving)
 app.use(express.static("public")); // serves static files (like CSS or images) from the public folder, making them accessible to the client.
@@ -13,16 +23,7 @@ app.use(express.urlencoded({ extended: true })); // allows parsing of URL-encode
 app.set("views", "views"); // specifies the folder (views) where Express will look for template files.
 app.set("view engine", "ejs"); // configures Express to use the EJS templating engine, which lets you render dynamic HTML files with embedded JavaScript.
 
-// 4: Routing Code: get AND post
-// Get: to get info from db. 3 qism: url, HTTP request header, request body
-// Post: brings data into db
-// app.get("/hello", function (req, res) {
-//   res.end(`<h1 style="background: blue">HELLO WORLD by Andrew</h1>
-//     <h2>Project Plan:</h2>`);
-// }); // In safari doesn't work
-// app.get("/gifts", function (req, res) {
-//   res.end(`<h1 style="background: red"> Siz sovgalar sahifasidasiz</h1>`);
-// });
+// 4: Routing Code:
 app.post("/create-item", (req, res) => {
   console.log(req);
   res.json({ test: "Success" });
@@ -30,6 +31,10 @@ app.post("/create-item", (req, res) => {
 
 app.get("/", function (req, res) {
   res.render("harid");
+});
+
+app.get("/author", (req, res) => {
+  res.render("author", { user: user });
 });
 
 // Server Setup
@@ -51,11 +56,16 @@ Ports 1024-49151 are registered ports, often used by third-party services.
 Ports 49152-65535 are dynamic or private ports, often used for temporary connections or custom services.
 
 Web Frameworks: Nest, Express (Python: Django)
-Front-End: traditional (ejs) bssr-Backend Server Side Rendering AND single page application (React)
+Front-End: traditional (ejs) BSSR [Backend Server Side Rendering] AND single page application (React)
 Git: local and github; develop and master branches
 
 Bootstrap + Tailwind
 
+get AND post
+Get: to get info from db. 3 qism: URL, HTTP request header, request body
+Post: brings data into db
+
+More Research needed:
 Event Loop
 NodeJS - libuv 
 Single Thread and Multi Thread
