@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const fs = require("fs");
+const livereload = require("livereload");
+const connectLivereload = require("connect-livereload");
 
 let user;
 fs.readFile("database/user.json", "utf-8", (err, data) => {
@@ -13,7 +15,7 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
   }
 });
 
-// 1: Kirish Code (Middleware and Static File Serving)
+// 1: Kirish 4 (Middleware and Static File Serving)
 app.use(express.static("public")); // serves static files (like CSS or images) from the public folder, making them accessible to the client.
 app.use(express.json()); // enables JSON payloads in incoming requests to be automatically parsed and available as JavaScript objects.
 app.use(express.urlencoded({ extended: true })); // allows parsing of URL-encoded data, typically from HTML forms.
@@ -55,21 +57,5 @@ Ports 0-1023 are considered well-known ports and are reserved for specific syste
 Ports 1024-49151 are registered ports, often used by third-party services.
 Ports 49152-65535 are dynamic or private ports, often used for temporary connections or custom services.
 
-Web Frameworks: Nest, Express (Python: Django)
-Front-End: traditional (ejs) BSSR [Backend Server Side Rendering] AND single page application (React)
 Git: local and github; develop and master branches
-
-Bootstrap + Tailwind
-
-get AND post
-Get: to get info from db. 3 qism: URL, HTTP request header, request body
-Post: brings data into db
-
-More Research needed:
-Event Loop
-NodeJS - libuv 
-Single Thread and Multi Thread
-JS functions by execution
-
-// git reset --hard
 */
