@@ -102,40 +102,40 @@ const list = [
 // }
 // run();
 
-// // setInterval with Callback
-// function maslahatBering(a, callback) {
-//   if (typeof a !== "number") callback("Iltimos, insert number", null);
-//   else if (a <= 20) callback(null, list[0]);
-//   else if (a <= 30) callback(null, list[1]);
-//   else if (a <= 40) callback(null, list[2]);
-//   else if (a <= 50) callback(null, list[3]);
-//   else if (a <= 60) callback(null, list[4]);
-//   else {
-//     setInterval(function () {
-//       callback(null, list[5]);
-//     }, 3000);
-//   }
-// }
+// setInterval with Callback
+function maslahatBering(a, callback) {
+  if (typeof a !== "number") callback("Iltimos, insert number", null);
+  else if (a <= 20) callback(null, list[0]);
+  else if (a <= 30) callback(null, list[1]);
+  else if (a <= 40) callback(null, list[2]);
+  else if (a <= 50) callback(null, list[3]);
+  else if (a <= 60) callback(null, list[4]);
+  else {
+    setInterval(function () {
+      callback(null, list[5]);
+    }, 3000);
+  }
+}
 
-// console.log("passed here 0");
-// maslahatBering(70, (err, data) => {
-//   if (err) console.log("error:", err);
-//   console.log("Result:", data);
-// });
-// console.log("passed here 1");
+console.log("passed here 0");
+maslahatBering(70, (err, data) => {
+  if (err) console.log("error:", err);
+  console.log("Result:", data);
+});
+console.log("passed here 1");
 
 // A-TASK:
 // Shunday 2 parametrli function tuzing, hamda birinchi parametrdagi letterni ikkinchi parametrdagi sozdan qatnashga sonini return qilishi kerak boladi.
 // MASALAN countLetter("e", "engineer") 3ni return qiladi.
 // masalani yechimi:
 
-function countLetter(letter, word) {
-  return word.split("").reduce((count, char) => {
-    return char === letter ? count + 1 : count;
-  }, 0);
-}
+// function countLetter(letter, word) {
+//   return word.split("").reduce((count, char) => {
+//     return char === letter ? count + 1 : count;
+//   }, 0);
+// }
 
-let result = countLetter("e", "engineer"); // 3
-console.log(result);
-result = countLetter("i", "Mit Devex organish"); // 2
-console.log(result);
+// let result = countLetter("e", "engineer"); // 3
+// console.log(result);
+// result = countLetter("i", "Mit Devex organish"); // 2
+// console.log(result);

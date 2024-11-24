@@ -15,6 +15,8 @@ fs.readFile("database/user.json", "utf-8", (err, data) => {
   }
 });
 
+// mongodb://azbeksid:<IFsZqRzDfrS6NrPY>@<hostname>/?ssl=true&replicaSet=atlas-nio27a-shard-0&authSource=admin&retryWrites=true&w=majority&appName=Cluster0
+
 // 1: Kirish 4 (Middleware and Static File Serving)
 app.use(express.static("public")); // serves static files (like CSS or images) from the public folder, making them accessible to the client.
 app.use(express.json()); // enables JSON payloads in incoming requests to be automatically parsed and available as JavaScript objects.
@@ -32,7 +34,7 @@ app.post("/create-item", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  res.render("harid");
+  res.render("reja");
 });
 
 app.get("/author", (req, res) => {
@@ -43,7 +45,9 @@ app.get("/author", (req, res) => {
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The server is running successfully on port: ${PORT}`);
+  console.log(
+    `The server is running successfully on port: ${PORT}, http://localhost:${PORT}`
+  );
 });
 
 /*
