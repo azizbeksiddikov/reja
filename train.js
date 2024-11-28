@@ -1,19 +1,34 @@
+// C-TASK:
+
+// Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
+// MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+
+function checkContent(str1, str2) {
+  const str1_s = str1.split("").sort().join("");
+  const str2_s = str2.split("").sort().join("");
+  return str1_s == str2_s;
+}
+let result = checkContent("mitgroup", "gmtiprou"); // true;
+console.log(result);
+result = checkContent("mitgroupp", "gmtiprou"); // false
+console.log(result);
+
 // B-TASK:
 
 // Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
 // MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
 // masalani yechimi:
 
-function countDigits(word) {
-  return word.split("").reduce((count, char) => {
-    return char >= "0" && char <= "9" ? count + 1 : count;
-  }, 0);
-}
+// function countDigits(word) {
+//   return word.split("").reduce((count, char) => {
+//     return char >= "0" && char <= "9" ? count + 1 : count;
+//   }, 0);
+// }
 
-let result = countDigits("ad2a54y79wet0sfgb9"); // 7
-console.log(result);
-result = countDigits("2024 is the year!"); // 4
-console.log(result);
+// let result = countDigits("ad2a54y79wet0sfgb9"); // 7
+// console.log(result);
+// result = countDigits("2024 is the year!"); // 4
+// console.log(result);
 
 // console.log("Jack Ma maslahatlari");
 
