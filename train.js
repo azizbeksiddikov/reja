@@ -1,5 +1,13 @@
 const moment = require("moment");
 
+// Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+// MASALAN: getReverse("hello") return qilsin "olleh"
+function getReverse(word) {
+  return word.split("").reverse().join("");
+}
+
+console.log(getReverse("hello")); // "olleh"
+
 // D-TASK:
 
 // Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul.
@@ -7,32 +15,32 @@ const moment = require("moment");
 // MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3)
 // & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  // 3ta method
-  qoldiq() {
-    const currentTime = moment().format("HH:mm");
-    console.log(
-      `hozir ${currentTime}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
-    );
-  }
-  sotish(name, number) {
-    this[name] -= number;
-  }
-  qabul(name, number) {
-    this[name] += number;
-  }
-}
-const shop = new Shop(4, 5, 2);
-shop.qoldiq(); // hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
-shop.sotish("non", 3);
-shop.qabul("cola", 4);
-shop.qoldiq(); // hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+//   // 3ta method
+//   qoldiq() {
+//     const currentTime = moment().format("HH:mm");
+//     console.log(
+//       `hozir ${currentTime}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`
+//     );
+//   }
+//   sotish(name, number) {
+//     this[name] -= number;
+//   }
+//   qabul(name, number) {
+//     this[name] += number;
+//   }
+// }
+// const shop = new Shop(4, 5, 2);
+// shop.qoldiq(); // hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+// shop.sotish("non", 3);
+// shop.qabul("cola", 4);
+// shop.qoldiq(); // hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
 
 // C-TASK:
 
