@@ -28,21 +28,16 @@ mongodb.connect(
     }
   }
 );
-// Remote connect:
-// ssh root@147.79.67.47 -p 22
-// user: root
-// password: Damir202020*
-// port: 22
 
 // npm i pm2 -g
 // pm2 ls
 
-// pm2 start server.js --name="JOHN_REJA"
+// pm2 start server.js --name="ANDREW_REJA"
 
-// pm2 stop id
-// pm2 delete id
+// pm2 stop 25
+// pm2 delete 25
 
 // pm2 logs
 // pm2 log id
 
-// http://147.79.67.47:4000/
+// http://147.79.67.47:1902/

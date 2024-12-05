@@ -1,13 +1,33 @@
 const moment = require("moment");
+// F-TASK:
+
+// Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true,
+// qatnashmasa false qaytarishi kerak.
+// MASALAN: findDoublers("hello") return true
+
+function findDoublers(word) {
+  chars = {};
+  for (char of word) {
+    if (!chars[char]) {
+      chars[char] = true;
+    } else {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(findDoublers("hello")); // return true
+console.log(findDoublers("halo")); // return false
 
 // E-TASK:
 // Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
 // MASALAN: getReverse("hello") return qilsin "olleh"
-function getReverse(word) {
-  return word.split("").reverse().join("");
-}
+// function getReverse(word) {
+//   return word.split("").reverse().join("");
+// }
 
-console.log(getReverse("hello")); // "olleh"
+// console.log(getReverse("hello")); // "olleh"
 
 // D-TASK:
 
