@@ -1,24 +1,45 @@
 const moment = require("moment");
+// G-TASK:
+
+// Shunday function tuzingki unga integerlardan iborat array pass bolsin va
+// function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
+// MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
+
+function getHighestIndex(arr) {
+  let max_num = Number.MIN_VALUE,
+    max_idx = 0;
+  for (index in arr) {
+    if (arr[index] > max_num) {
+      max_num = arr[index];
+      max_idx = index;
+    }
+  }
+  return max_idx;
+}
+
+console.log(getHighestIndex([5, 21, 12, 21, 8])); // 1
+console.log(getHighestIndex([5, 21, 12, 21, 50, 8])); // 4
+
 // F-TASK:
 
 // Shunday findDoublers function tuzing, unga faqat bitta string argument pass bolib, agar stringda bir hil harf qatnashgan bolsa true,
 // qatnashmasa false qaytarishi kerak.
 // MASALAN: findDoublers("hello") return true
 
-function findDoublers(word) {
-  chars = {};
-  for (char of word) {
-    if (!chars[char]) {
-      chars[char] = true;
-    } else {
-      return true;
-    }
-  }
-  return false;
-}
+// function findDoublers(word) {
+//   chars = {};
+//   for (char of word) {
+//     if (!chars[char]) {
+//       chars[char] = true;
+//     } else {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
 
-console.log(findDoublers("hello")); // return true
-console.log(findDoublers("halo")); // return false
+// console.log(findDoublers("hello")); // return true
+// console.log(findDoublers("halo")); // return false
 
 // E-TASK:
 // Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
